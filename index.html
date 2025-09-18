@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Morrivar — Links &amp; Contact</title>
+    <meta name="description" content="A single page with Morrivar's social links, featured posts, and contact details.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header" id="top">
+        <div class="inner">
+            <div class="brand" aria-label="Morrivar logo">
+                <img src="assets/m-logo.png" alt="Morrivar" class="brand-logo">
+            </div>
+            <nav class="main-nav" aria-label="Primary navigation">
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <button class="theme-toggle" aria-label="Toggle theme" id="themeToggle">
+                <span class="theme-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="inner hero-inner">
+                <h1 id="hero-title">Hi, I’m Morrivar.</h1>
+                <p class="lead">I write about politics, gaming, and social dynamics. This page is where to find me, what I’m working on, and how to reach out.</p>
+            </div>
+        </section>
+
+        <section class="contact" id="contact" aria-labelledby="contact-title">
+            <div class="inner contact-inner">
+                <h2 id="contact-title">Reach out</h2>
+                <p>Twitter and Tumblr for day-to-day notes. Email when you need time on the calendar.</p>
+                <div class="contact-panel">
+                    <div class="contact-channel">
+                        <h3>Follow along</h3>
+                        <p class="contact-note">Threads, quick takes, and Tumblr re-blogs land here first.</p>
+                        <div class="contact-social">
+                            <div class="social-cta social-cta--twitter" data-twitter-handle="MorrivarGG">
+                                <noscript>
+                                    <a href="https://twitter.com/MorrivarGG">Follow @MorrivarGG</a>
+                                </noscript>
+                            </div>
+                            <div class="social-cta social-cta--tumblr">
+                                <iframe class="tumblr-follow-button" src="https://platform.tumblr.com/v2/follow_button.html?type=follow&amp;tumblelog=morrivar&amp;color=black" data-base-src="https://platform.tumblr.com/v2/follow_button.html?type=follow&amp;tumblelog=morrivar" scrolling="no" allowtransparency="true" frameborder="0" height="20" width="65" title="Follow morrivar on Tumblr"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-channel">
+                        <h3>Email</h3>
+                        <p class="contact-note">Collaborations or press requests—drop a line and I’ll reply within a couple days.</p>
+                        <div class="contact-email">
+                            <a class="btn ghost" href="mailto:collab@morrivar.com">collab@morrivar.com</a>
+                            <a class="btn ghost" href="mailto:press@morrivar.com">press@morrivar.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="inner">
+            <p><span id="year"></span> Morrivar · All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script src="script.js"></script>
+</body>
+</html>
