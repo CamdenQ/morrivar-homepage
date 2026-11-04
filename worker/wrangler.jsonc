@@ -1,0 +1,16 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "morrivar-x-feed",
+  "main": "src/index.mjs",
+  "compatibility_date": "2026-11-03",
+  "workers_dev": true,
+  "triggers": { "crons": ["*/30 * * * *"] },
+  "kv_namespaces": [{ "binding": "X_CACHE" }],
+  "vars": {
+    "X_AUTH_MODE": "app-only",
+    "X_HANDLE": "MorrivarGG",
+    "MONTHLY_READ_LIMIT": "1000",
+    "ALLOWED_ORIGINS": "https://morrivar.com,https://www.morrivar.com,http://localhost:8080,http://127.0.0.1:8080"
+  },
+  "observability": { "enabled": true }
+}

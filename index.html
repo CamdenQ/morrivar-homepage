@@ -1,78 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Morrivar — Links &amp; Contact</title>
-    <meta name="description" content="A single page with Morrivar's social links, featured posts, and contact details.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <meta name="color-scheme" content="dark light">
+    <title>Morrivar — Commentary &amp; Gaming</title>
+    <meta name="description" content="Commentary and gaming from Morrivar. Watch on YouTube, follow the conversation on X, or get in touch.">
+    <meta property="og:title" content="Morrivar — Commentary &amp; Gaming">
+    <meta property="og:description" content="Find my videos, posts, and ways to get in touch.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="assets/m-logo.png" type="image/png">
+    <link rel="preload" href="assets/fonts/barlow-condensed-extrabold-italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/morrivar-portrait.png" as="image">
+    <link rel="stylesheet" href="styles.css?v=20261103-4">
+    <script>
+        try {
+            const saved = localStorage.getItem('morrivar-theme');
+            document.documentElement.dataset.theme = saved === 'light' || saved === 'dark'
+                ? saved : (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        } catch (_) { /* Keep the default when storage is unavailable. */ }
+    </script>
+    <script src="script.js?v=20261103-4" defer></script>
+    <script type="module" src="x-feed.js?v=20261103-1"></script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <img class="corner corner-top" src="assets/brand-corner.png" alt="" aria-hidden="true" width="500" height="500">
     <header class="site-header" id="top">
-        <div class="inner">
-            <div class="brand" aria-label="Morrivar logo">
-                <img src="assets/m-logo.png" alt="Morrivar" class="brand-logo">
-            </div>
+        <div class="inner header-inner">
+            <a class="brand" href="#top" aria-label="Morrivar home">
+                <img class="brand-logo" src="assets/m-logo.png" alt="" width="52" height="52">
+                <span class="wordmark brand-name">Morrivar</span>
+            </a>
             <nav class="main-nav" aria-label="Primary navigation">
+                <a href="#videos">Videos</a>
                 <a href="#about">About</a>
                 <a href="#contact">Contact</a>
             </nav>
-            <button class="theme-toggle" aria-label="Toggle theme" id="themeToggle">
-                <span class="theme-icon" aria-hidden="true"></span>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Use light theme" aria-pressed="false">
+                <span class="icon icon-sun" aria-hidden="true"></span>
+                <span class="toggle-knob" aria-hidden="true"></span>
             </button>
         </div>
     </header>
-
-    <main>
-        <section class="hero" aria-labelledby="hero-title">
-            <div class="inner hero-inner">
-                <h1 id="hero-title">Hi, I’m Morrivar.</h1>
-                <p class="lead">I write about politics, gaming, and social dynamics. This page is where to find me, what I’m working on, and how to reach out.</p>
-            </div>
-        </section>
-
-        <section class="contact" id="contact" aria-labelledby="contact-title">
-            <div class="inner contact-inner">
-                <h2 id="contact-title">Reach out</h2>
-                <p>Twitter and Tumblr for day-to-day notes. Email when you need time on the calendar.</p>
-                <div class="contact-panel">
-                    <div class="contact-channel">
-                        <h3>Follow along</h3>
-                        <p class="contact-note">Threads, quick takes, and Tumblr re-blogs land here first.</p>
-                        <div class="contact-social">
-                            <div class="social-cta social-cta--twitter" data-twitter-handle="MorrivarGG">
-                                <noscript>
-                                    <a href="https://twitter.com/MorrivarGG">Follow @MorrivarGG</a>
-                                </noscript>
-                            </div>
-                            <div class="social-cta social-cta--tumblr">
-                                <iframe class="tumblr-follow-button" src="https://platform.tumblr.com/v2/follow_button.html?type=follow&amp;tumblelog=morrivar&amp;color=black" data-base-src="https://platform.tumblr.com/v2/follow_button.html?type=follow&amp;tumblelog=morrivar" scrolling="no" allowtransparency="true" frameborder="0" height="20" width="65" title="Follow morrivar on Tumblr"></iframe>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact-channel">
-                        <h3>Email</h3>
-                        <p class="contact-note">Collaborations or press requests—drop a line and I’ll reply within a couple days.</p>
-                        <div class="contact-email">
-                            <a class="btn ghost" href="mailto:collab@morrivar.com">collab@morrivar.com</a>
-                            <a class="btn ghost" href="mailto:press@morrivar.com">press@morrivar.com</a>
-                        </div>
-                    </div>
+    <main id="main">
+        <section class="hero inner" id="about" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <h1 class="wordmark" id="hero-title">Morrivar</h1>
+                <p class="descriptor">Commentary &amp; Gaming</p>
+                <p class="hero-intro">Find my videos, posts, and ways to get in touch.</p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="https://www.youtube.com/@Morrivar"><span class="icon icon-youtube" aria-hidden="true"></span>Watch on YouTube</a>
+                    <a class="button button-secondary" href="https://x.com/MorrivarGG"><span class="icon icon-x" aria-hidden="true"></span>Follow on X</a>
                 </div>
+                <p class="handles"><a href="https://www.youtube.com/@Morrivar">YouTube: Morrivar</a><span aria-hidden="true">|</span><a href="https://x.com/MorrivarGG">X: @MorrivarGG</a></p>
             </div>
+            <img class="hero-portrait" src="assets/morrivar-portrait.png" alt="Oil-painted portrait of Morrivar in sunglasses and a dark coat with scarlet lapels and brass detailing." width="1239" height="1270" fetchpriority="high">
         </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="inner">
-            <p><span id="year"></span> Morrivar · All rights reserved.</p>
+        <div class="inner content-grid">
+            <section class="youtube-section" id="videos" aria-labelledby="youtube-title">
+                <div class="section-heading">
+                    <h2 id="youtube-title">On YouTube</h2>
+                    <a class="text-link" href="https://www.youtube.com/@Morrivar/videos">All videos<span class="icon icon-arrow" aria-hidden="true"></span></a>
+                </div>
+                <div id="youtubeFeed" class="youtube-feed" aria-busy="true">
+                    <p class="feed-message" id="youtubeStatus" role="status">Find my videos on YouTube.</p>
+                    <a class="text-link" href="https://www.youtube.com/@Morrivar/videos">Browse the channel<span class="icon icon-arrow" aria-hidden="true"></span></a>
+                </div>
+                <noscript><p><a class="text-link" href="https://www.youtube.com/@Morrivar/videos">Watch Morrivar on YouTube</a></p></noscript>
+            </section>
+            <section class="x-section" aria-labelledby="x-title">
+                <div class="section-heading">
+                    <h2 id="x-title">On X</h2>
+                    <span class="icon icon-x section-brand-icon" aria-hidden="true"></span>
+                </div>
+                <div class="x-timeline" id="xTimeline" aria-busy="false">
+                    <a href="https://x.com/MorrivarGG">Posts by MorrivarGG</a>
+                </div>
+                <p class="x-fallback" id="xStatus" role="status">Posts and replies from @MorrivarGG.</p>
+                <a class="text-link x-profile-link" href="https://x.com/MorrivarGG">More on X<span class="icon icon-arrow" aria-hidden="true"></span></a>
+            </section>
         </div>
+    </main>
+    <footer class="site-footer inner" id="contact">
+        <img class="footer-mark" src="assets/m-logo.png" alt="" aria-hidden="true" width="340" height="340" loading="lazy">
+        <div class="contact-row">
+            <h2>Get in touch</h2>
+            <a href="mailto:collab@morrivar.com">collab@morrivar.com</a>
+            <a href="mailto:press@morrivar.com">press@morrivar.com</a>
+            <a class="tumblr-link" href="https://morrivar.tumblr.com/">Tumblr<span class="icon icon-arrow" aria-hidden="true"></span></a>
+        </div>
+        <p class="copyright"><span id="year">2026</span> Morrivar <span class="rights">· All rights reserved.</span></p>
     </footer>
-
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    <script src="script.js"></script>
+    <img class="corner corner-bottom" src="assets/brand-corner.png" alt="" aria-hidden="true" width="500" height="500" loading="lazy">
 </body>
 </html>

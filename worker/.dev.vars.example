@@ -1,0 +1,9 @@
+# Copy to worker/.dev.vars for LOCAL testing only; the copied file is ignored.
+# Public-feed OAuth 2.0 app-only authentication. No redirect or user token needed.
+X_BEARER_TOKEN=
+# Consumer credentials may be used locally to obtain the app's Bearer Token.
+X_API_KEY=
+X_API_SECRET=
+# Optional legacy OAuth 1.0a support, used only when app-only mode is not selected.
+X_ACCESS_TOKEN=
+X_ACCESS_TOKEN_SECRET=

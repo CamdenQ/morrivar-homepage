@@ -1,0 +1,14 @@
+{
+  "name": "morrivar-homepage",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "feed:refresh": "node scripts/refresh_x.mjs",
+    "feed:dev": "wrangler dev --config worker/wrangler.jsonc --test-scheduled --port 8787",
+    "feed:check": "wrangler deploy --config worker/wrangler.jsonc --dry-run",
+    "feed:deploy": "wrangler deploy --config worker/wrangler.jsonc"
+  },
+  "devDependencies": { "wrangler": "4.157.0" },
+  "engines": { "node": ">=22" }
+}
